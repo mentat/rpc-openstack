@@ -13,10 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-stashboard_git_repo: https://github.com/rmyers/clouddb-rpc
-stashboard_git_install_branch: master
-stashboard_git_package_name: stashboard
-stashboard_git_install_fragments: "subdirectory=dashboard/"
-stashboard_dest_dir: /opt/rackspace/stashboard
 stashboard_pip_packages:
-   - stashboard
+   - "git+https://github.com/rmyers/stashboard.git#egg=stashboard"
+pip_install_options: "-U"
