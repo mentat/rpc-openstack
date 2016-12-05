@@ -23,6 +23,9 @@
         name: "{{ container_name }}"
         container_config:
           - "lxc.aa_profile=unconfined"
+          - "lxc.cap.drop="
+          # Above are for docker on lxc, we will need to change these to:
+          # - "lxc.aa_profile=lxc-openstack"
       delegate_to: "{{ physical_host }}"
       when: not is_metal | bool
       register: container_config
