@@ -1,0 +1,14 @@
+---
+# Add upstart init files
+#
+
+- name: Place the init script
+  template:
+    src: "upstart-init.j2"
+    dest: "/etc/init/{{ item.value.service_name }}.conf"
+    mode: "0644"
+    owner: "root"
+    group: "root"
+  with_dict: "{{ stash_services }}"
+  notify:
+    - Reload upstart init scripts

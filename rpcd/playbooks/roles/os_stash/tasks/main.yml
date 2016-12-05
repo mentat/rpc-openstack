@@ -171,3 +171,18 @@
     src: "mongo33.json"
     dest: "/etc/stash/datastores/mongo33.json"
     mode: 0755
+
+# Stash Services
+
+- include: stash_init_upstart.yml
+  when:
+    - ansible_service_mgr == 'upstart'
+
+- name: Load service
+  service:
+   name: "{{ item.value.service_name }}"
+   enabled: "yes"
+   state: "started"
+  with_dict: "{{ stash_services }}"
+  notify:
+    - Restart stash services

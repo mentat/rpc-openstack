@@ -1,0 +1,18 @@
+---
+
+- name: Reload systemd daemon
+  command: "systemctl daemon-reload"
+  notify:
+    - Restart stash services
+
+- name: Reload upstart init scripts
+  command: initctl reload-configuration
+  notify:
+    - Restart stash services
+
+- name: Restart stash services
+  service:
+    name: "{{ item.value.service_name }}"
+    state: "restarted"
+    pattern: "{{ item.value.service_name }}"
+  with_dict: "{{ stash_services }}"

@@ -26,3 +26,10 @@ stash_package_state: "latest"
 stash_pip_package_state: "latest"
 stash_requires_pip_packages:
   - python-keystoneclient
+
+stash_services:
+  stash_api:
+    group: stash-api
+    service_name: stash
+    description: "Stash API Server"
+    extra: "-config /etc/stash/stash.conf"
