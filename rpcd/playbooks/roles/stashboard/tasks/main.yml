@@ -31,22 +31,6 @@
     - stashboard-install
     - stashboard-pip-packages
 
-- name: "Create /etc/rackspace if it doesn't exist"
-  file:
-    path: /etc/rackspace
-    state: directory
-    mode: "0775"
-    owner: root
-    group: root
-
-- name: Install solution catalog
-  template:
-    src: solutions.yaml
-    dest: "/etc/rackspace/solutions.yaml"
-    mode: "0644"
-    owner: root
-    group: root
-
 - name: Generate Horizon panel group
   template:
     src: _1710_database_panel_group.py

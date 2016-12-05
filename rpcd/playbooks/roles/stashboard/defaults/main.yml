@@ -15,4 +15,3 @@
 
 stashboard_pip_packages:
    - "git+https://github.com/rmyers/stashboard.git#egg=stashboard"
-pip_install_options: "-U"
