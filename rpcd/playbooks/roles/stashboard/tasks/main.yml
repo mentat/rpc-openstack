@@ -51,8 +51,8 @@
 
 - name: Generate Horizon cluster panel
   template:
-    src: _1740_project_databases_clusters_panel.py
-    dest: "{{ horizon_lib_dir }}/openstack_dashboard/local/enabled/_1740_project_databases_clusters_panel.py"
+    src: _1740_project_database_clusters_panel.py
+    dest: "{{ horizon_lib_dir }}/openstack_dashboard/local/enabled/_1740_project_database_clusters_panel.py"
     mode: "0644"
     owner: root
     group: root
