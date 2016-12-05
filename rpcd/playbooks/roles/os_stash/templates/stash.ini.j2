@@ -1,3 +1,8 @@
-database_address = 127.0.0.1
+# Note, for Mysql include &parseTime=true in the connection string
+# i.e.: "user:password@/dbname?charset=utf8&parseTime=True&loc=Local"
+database_connection = /tmp/stash.db
+database_type = sqlite3
 bind_address = :8779
-default_provider = openstack_heat
+default_provider = docker
+enabled_datastores = mongodb,hadoop,elastic
+datastore_load_path = /etc/stash/datastores

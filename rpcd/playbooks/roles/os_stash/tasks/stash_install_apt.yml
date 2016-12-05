@@ -13,6 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+- name: Add docker apt repo
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo ubuntu-trusty main
+
+- name: Add docker repo key
+  apt_key:
+    keyserver: hkp://ha.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
 - name: Install apt packages (common)
   apt:
     pkg: "{{ item }}"

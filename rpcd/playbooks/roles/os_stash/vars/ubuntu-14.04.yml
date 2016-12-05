@@ -19,3 +19,7 @@ cache_timeout: 600
 stash_distro_packages:
   - git
   - python-pip
+  - apt-transport-https
+  - ca-certificates
+  - linux-image-extra-virtual
+  - "linux-image-extra-{{ ansible_kernel }}"

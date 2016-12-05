@@ -1,0 +1,16 @@
+{
+    "id": "mongodb:32",
+    "type": "mongodb",
+    "display_name": "MongoDB 3.2",
+    "version": "3.2",
+    "deprecated": false,
+    "visible": true,
+    "default": true,
+    "commands": {
+        "build": "mongo make it happen",
+        "backup": "mongo make me a backup"
+    },
+    "checks": {
+        "heartbeat": "mongo status"
+    }
+}

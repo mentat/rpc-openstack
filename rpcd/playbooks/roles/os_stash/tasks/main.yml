@@ -149,8 +149,25 @@
     path: "/etc/stash"
     state: directory
 
+- name: Create datastores directory
+  file:
+    path: "/etc/stash/datastores"
+    state: directory
+
 - name: Create stash config file
   template:
     src: "stash.ini.j2"
     dest: "/etc/stash/stash.conf"
+    mode: 0755
+
+- name: Create mongodb-3.2 datastore
+  template:
+    src: "mongo32.json"
+    dest: "/etc/stash/datastores/mongo32.json"
+    mode: 0755
+
+- name: Create mongodb-3.3 datastore
+  template:
+    src: "mongo33.json"
+    dest: "/etc/stash/datastores/mongo33.json"
     mode: 0755

@@ -1,0 +1,16 @@
+{
+    "id": "mongodb:33",
+    "type": "mongodb",
+    "display_name": "MongoDB 3.3",
+    "version": "3.3",
+    "deprecated": false,
+    "visible": true,
+    "default": false,
+    "commands": {
+        "build": "mongo make it happen",
+        "backup": "mongo make me a backup"
+    },
+    "checks": {
+        "heartbeat": "mongo status"
+    }
+}
