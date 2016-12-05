@@ -25,3 +25,5 @@ stash_distro_packages:
   - "linux-image-extra-{{ ansible_kernel }}"
   - docker
   - docker-engine
+
+ansible_service_mgr: upstart
