@@ -96,13 +96,4 @@
     galera_address: "{{ internal_lb_vip_address }}"
     is_metal: "{{ properties.is_metal|default(false) }}"
 
-- name: "Install stashboard"
-  hosts: "horizon_all"
-  user: root
-  roles:
-    - stashboard
-  vars:
-    roles_folder: "/etc/ansible/roles"
-  vars_files:
-    #- group_vars/all.yml
-    - "{{ roles_folder }}/os_horizon/defaults/main.yml"
+- include: stashboard_extension.yml
