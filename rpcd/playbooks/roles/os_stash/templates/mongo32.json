@@ -3,6 +3,7 @@
     "type": "mongodb",
     "display_name": "MongoDB 3.2",
     "version": "3.2",
+    "image_name": "mongo",
     "deprecated": false,
     "visible": true,
     "default": true,
