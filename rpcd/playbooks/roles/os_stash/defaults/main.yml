@@ -22,6 +22,8 @@ stash_service_publicurl: "{{ stash_service_publicuri }}/v1.0/%(tenant_id)s"
 stash_service_internaluri: "{{ stash_service_internaluri_proto }}://{{ ansible_eth1.ipv4.address }}:{{ stash_service_port }}"
 stash_service_internalurl: "{{ stash_service_internaluri }}/v1.0/%(tenant_id)s"
 
+stash_consul_version: "0.7.1"
+stash_consul_checksum: "5dbfc555352bded8a39c7a8bf28b5d7cf47dec493bc0496e21603c84dfe41b4b"
 stash_package_state: "latest"
 stash_pip_package_state: "latest"
 stash_requires_pip_packages:
@@ -33,3 +35,8 @@ stash_services:
     service_name: stash
     description: "Stash API Server"
     extra: "-config /etc/stash/stash.conf"
+  consul:
+    group: stash-consul
+    service_name: consul
+    description: "Consul Server"
+    extra: "agent -dev -client 0.0.0.0 -bind 0.0.0.0"
