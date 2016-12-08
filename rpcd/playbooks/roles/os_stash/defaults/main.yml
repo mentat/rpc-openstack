@@ -39,4 +39,4 @@ stash_services:
     group: stash-consul
     service_name: consul
     description: "Consul Server"
-    extra: "agent -dev -client 0.0.0.0 -bind 0.0.0.0"
+    extra: "agent -dev -client 127.0.0.1 -bind {{ ansible_eth1.ipv4.address }}"
