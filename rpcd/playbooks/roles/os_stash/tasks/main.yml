@@ -144,9 +144,9 @@
 
 - name: "Download consul binary"
   get_url:
-    url: https://releases.hashicorp.com/consul/{{ stash_consul_version }}/consul_{{ stash_consul_version }}_linux_amd64.zip
+    url: "https://releases.hashicorp.com/consul/{{ stash_consul_version }}/consul_{{ stash_consul_version }}_linux_amd64.zip"
     dest: /tmp/consul.zip
-    sha256sum: {{ stash_consul_checksum }}
+    sha256sum: "{{ stash_consul_checksum }}"
     mode: 0755
 
 - name: "Unpack consul binary"
