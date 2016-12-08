@@ -152,7 +152,7 @@
 - name: "Unpack consul binary"
   unarchive:
     src: /tmp/consul.zip
-    dest: /usr/local/bin/consul
+    dest: /usr/local/bin
     mode: 0755
     copy: no
   notify:
